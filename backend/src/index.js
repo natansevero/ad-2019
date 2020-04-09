@@ -6,6 +6,9 @@ require('./database/connection.db');
 
 const app = express();
 
+const indexRoute = require('./routes');
+const personRoutes = require('./routes/v1/person.routes');
+
 app.set('port', process.env.PORT || 3333);
 app.use(express.json());
 app.use(morgan('dev'));
@@ -16,9 +19,9 @@ app.use(
     })
 );
 
-// routes
-// ...
+app.use(indexRoute);
+app.use(personRoutes);
 
 app.listen(app.get('port'), () => {
-    console.log(`Applcation is running on ${app.get('port')}`);
+    console.log(`Applcation is running on port ${app.get('port')}`);
 });

@@ -17,6 +17,7 @@ if (process.env.NODE_ENV === 'production') {
 
 mongoose.connection.on('error', err => {
     console.error('Error in connection, my friend')
+    console.error(err);
     process.exit(1)
 })
 
