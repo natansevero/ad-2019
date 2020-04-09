@@ -5,6 +5,23 @@ const create = async data => {
     return await person.save();
 }
 
+const getAll = async () => {
+    return await PersonModel.find({});
+}
+
+const update = async (id, data) => {
+    return await PersonModel.findByIdAndUpdate(id, {
+        $set: { ...data }
+    })
+}
+
+const remove = async id => {
+    return await PersonModel.findByIdAndDelete(id);
+}
+
 module.exports = {
     create,
+    getAll,
+    update,
+    remove
 }

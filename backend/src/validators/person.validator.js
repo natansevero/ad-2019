@@ -4,9 +4,9 @@ module.exports = [
     body('name')
         .notEmpty()
         .trim()
-        .withMessage('must does not be empty'),
+        .withMessage('Name must does not be empty'),
     body('email')
         .notEmpty()
         .isEmail()
-        .withMessage('must be a valid email'),
+        .withMessage('Email must be a valid email'),
 ];
