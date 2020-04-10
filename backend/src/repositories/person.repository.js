@@ -9,19 +9,30 @@ const getAll = async () => {
     return await PersonModel.find({});
 }
 
-const update = async (id, data) => {
+const getAllWithoutFriends = async () => {
+    return await PersonModel.find({}, 'name email')
+}
+
+const getAllWithFriendEmail =  async () => {
+    return await PersonModel.find({})
+        .populate('friend', 'name email')
+}
+
+const updateById = async (id, data) => {
     return await PersonModel.findByIdAndUpdate(id, {
         $set: { ...data }
     })
 }
 
-const remove = async id => {
+const removeById = async id => {
     return await PersonModel.findByIdAndDelete(id);
 }
 
 module.exports = {
     create,
     getAll,
-    update,
-    remove
+    getAllWithoutFriends,
+    getAllWithFriendEmail,
+    updateById,
+    removeById
 }

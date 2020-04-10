@@ -19,7 +19,7 @@ const create = async (req, res) => {
 
 const read = async (req, res) => {
     try {
-        const people = await PersonRepository.getAll();
+        const people = await PersonRepository.getAllWithoutFriends();
 
         return res.status(200).json(people);
     } catch (err) {
@@ -34,12 +34,12 @@ const update = async (req, res) => {
     const { id } = req.params;
 
     try {
-        const person = await PersonRepository.update(id, {
+        const person = await PersonRepository.updateById(id, {
             name,
             email
         })
 
-        if(!person) {
+        if (!person) {
             return res.status(404).json({
                 message: 'Person not found'
             });
@@ -57,9 +57,9 @@ const remove = async (req, res) => {
     const { id } = req.params;
 
     try {
-        const person = await PersonRepository.remove(id);
+        const person = await PersonRepository.removeById(id);
 
-        if(!person) {
+        if (!person) {
             return res.status(404).json({
                 message: 'Person not found'
             });
