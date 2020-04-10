@@ -6,3 +6,8 @@ export const selectPeopleList = createSelector(
     [selectPerson],
     person => person.list
 );
+
+export const selectNumberOfPeople = createSelector(
+    [selectPeopleList],
+    peopleList => peopleList.length
+)

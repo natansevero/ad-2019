@@ -3,10 +3,11 @@ import { ListGroup } from 'react-bootstrap';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 
+import PersonItem from '../person-item/person-item.component';
+
 import { fetchPeople } from '../../redux/person/person.actions';
 
 import { selectPeopleList } from '../../redux/person/person.selectors';
-import PersonItem from '../person-item/person-item.component';
 
 const PeopleList = ({ people, fetchPeople }) => {
     useEffect(() => {
@@ -14,11 +15,16 @@ const PeopleList = ({ people, fetchPeople }) => {
     }, [fetchPeople]);
 
     return (
-        <ListGroup>
-            {people.map(person => (
-                <PersonItem key={person._id} name={person.name} email={person.email} />
-            ))}
-        </ListGroup>
+        <>
+            <p>
+                <strong>OBS.:</strong> O sorteiro só pode ser realizado se houve mais de 3 pessoas e um núemro par de pessoas.
+            </p>
+            <ListGroup>
+                {people.map(person => (
+                    <PersonItem key={person._id} person={person} />
+                ))}
+            </ListGroup>
+        </>
     )
 }
 
