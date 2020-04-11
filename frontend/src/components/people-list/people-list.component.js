@@ -16,9 +16,6 @@ const PeopleList = ({ people, fetchPeople }) => {
 
     return (
         <>
-            <p>
-                <strong>OBS.:</strong> O sorteiro só pode ser realizado se houve mais de 3 pessoas e um núemro par de pessoas.
-            </p>
             <ListGroup>
                 {people.map(person => (
                     <PersonItem key={person._id} person={person} />

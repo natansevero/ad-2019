@@ -6,7 +6,11 @@ const PersonForm = ({ name, email, setName, setEmail, handleSubmit }) => {
         <Form onSubmit={handleSubmit}>
             <Form.Row>
                 <Form.Group as={Col}>
-                    <Form.Label>Nome</Form.Label>
+                    <Form.Label>
+                        <strong>
+                            Nome:
+                        </strong>
+                    </Form.Label>
                     <Form.Control
                         type="text"
                         name='name'
@@ -18,7 +22,11 @@ const PersonForm = ({ name, email, setName, setEmail, handleSubmit }) => {
                 </Form.Group>
 
                 <Form.Group as={Col}>
-                    <Form.Label>E-mail</Form.Label>
+                    <Form.Label>
+                        <strong>
+                            E-mail:
+                        </strong>
+                    </Form.Label>
                     <Form.Control
                         type="email"
                         name='email'

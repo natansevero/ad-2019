@@ -8,18 +8,29 @@ import { drawPeople } from '../../redux/person/person.actions';
 import { selectNumberOfPeople } from './../../redux/person/person.selectors';
 
 const DrawButton = ({ numberOfPeople, drawPeople }) => (
-    <Row>
-        <Col>
-            <Button 
-                block
-                variant="info"
-                onClick={() => drawPeople()} 
-                disabled={numberOfPeople % 2 !== 0}
-            >    
-                Sortear pessoas/amigos
-            </Button>
-        </Col>
-    </Row>
+    <>
+        {
+            (numberOfPeople > 0)
+            &&
+            <Row>
+                <Col>
+                    <br />
+                    <Button
+                        block
+                        variant="info"
+                        onClick={() => drawPeople()}
+                        disabled={numberOfPeople < 4 || numberOfPeople % 2 !== 0}
+                    >
+                        Sortear pessoas/amigos
+                    </Button>
+                    <p>
+                        <strong>OBS.:</strong> O sorteiro só pode ser realizado se houve mais de 3 pessoas e um núemro par de pessoas.
+                    </p>
+                </Col>
+            </Row>
+
+        }
+    </>
 )
 
 const mapStateToProps = createStructuredSelector({

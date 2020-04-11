@@ -7,8 +7,8 @@ import DrawButton from '../../components/draw-button/draw-button.component';
 const SecretFriendPage = () => (
     <>
         <CreatePerson />
-        <DrawButton />
         <PeopleList />
+        <DrawButton />
     </>
 )
 

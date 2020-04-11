@@ -5,6 +5,8 @@ import PersonForm from './../person-form/person-form.component';
 
 import { createPerson } from '../../redux/person/person.actions';
 
+import { CreatePersonContainer } from './create-person.styles';
+
 const CreatePerson = ({ createPerson }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -26,14 +28,16 @@ const CreatePerson = ({ createPerson }) => {
     }
 
     return (
-        <PersonForm
-            name={name}
-            email={email}
-            setName={setName}
-            setEmail={setEmail}
-            handleSubmit={handleSubmit}
-            handleReset={handleReset}
-        />
+        <CreatePersonContainer>
+            <PersonForm
+                name={name}
+                email={email}
+                setName={setName}
+                setEmail={setEmail}
+                handleSubmit={handleSubmit}
+                handleReset={handleReset}
+            />
+        </CreatePersonContainer>
     )
 }
 

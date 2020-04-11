@@ -20,7 +20,7 @@ const UpdatePersonModal = ({ show, person, handleCloseModal, updatePerson }) => 
 
         updatePerson({
             _id: person._id,
-            name, 
+            name,
             email
         });
 
@@ -33,7 +33,11 @@ const UpdatePersonModal = ({ show, person, handleCloseModal, updatePerson }) => 
     }
 
     return (
-        <Modal show={show} onHide={handleCloseModal}>
+        <Modal 
+            size="lg"
+            show={show} 
+            onHide={handleCloseModal}>
+            
             <Modal.Header closeButton>
                 <Modal.Title>Atualizar <strong>{person.name}</strong> </Modal.Title>
             </Modal.Header>
