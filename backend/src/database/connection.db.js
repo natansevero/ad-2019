@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-let uri = 'mongodb://localhost:27017/ad-2019'
+let uri = 'mongodb://ad-2019-mongo-link:27017/ad-2019';
 
 if (process.env.NODE_ENV === 'production') {
-    uri = process.env.MONGODB_URI
+    uri = process.env.MONGODB_URI;
     mongoose.connect(process.env.MONGODB_URI, { 
         useNewUrlParser: true, 
         useUnifiedTopology: true  
-    })
+    });
 } else {
     mongoose.connect(uri, { 
         useNewUrlParser: true,

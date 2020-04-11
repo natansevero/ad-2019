@@ -24,7 +24,7 @@ const DrawButton = ({ numberOfPeople, drawPeople }) => (
                         Sortear pessoas/amigos
                     </Button>
                     <p>
-                        <strong>OBS.:</strong> O sorteiro só pode ser realizado se houve mais de 3 pessoas e um núemro par de pessoas.
+                        <strong>OBS.:</strong> O sorteiro só pode ser realizado se houver mais de 3 pessoas e um núemro par de pessoas.
                     </p>
                 </Col>
             </Row>

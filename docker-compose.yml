@@ -1,0 +1,27 @@
+version: '2'
+services:
+  ad-2019-mongo:
+    image: mongo
+    container_name: ad-2019-mongo 
+    ports:
+      - "27017:27017"
+
+  ad-2019-backend:
+    build: ./backend/
+    container_name: ad-2019-backend
+    env_file:
+       - ./backend/variables.env
+    ports:
+      - "3333:3333"
+    depends_on:
+      - ad-2019-mongo
+    links:
+      - "ad-2019-mongo:ad-2019-mongo-link"
+
+  ad-2019-frontend:
+    build: ./frontend/
+    container_name: ad-2019-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - ad-2019-backend  

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon ./src/index.js"
+    "start:dev": "env NODE_ENV=development nodemon ./src/index.js",
+    "start:prod": "env NODE_ENV=production node ./src/index.js"
   },
   "keywords": [],
   "author": "",

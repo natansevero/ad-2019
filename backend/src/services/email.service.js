@@ -4,8 +4,8 @@ const mailserver = {
     host: 'smtp.ethereal.email',
     port: 587,
     auth: {
-        user: '',
-        pass: ''
+        user: process.env.USER_MAIL_SERVER,
+        pass: process.env.PASS_MAIL_SERVER
     }
 }
 
