@@ -13,9 +13,9 @@ const getAllWithoutFriends = async () => {
     return await PersonModel.find({}, 'name email')
 }
 
-const getAllWithFriendEmail =  async () => {
+const getAllWithFriendName =  async () => {
     return await PersonModel.find({})
-        .populate('friend', 'name email')
+        .populate('friend', 'name')
 }
 
 const updateById = async (id, data) => {
@@ -32,7 +32,7 @@ module.exports = {
     create,
     getAll,
     getAllWithoutFriends,
-    getAllWithFriendEmail,
+    getAllWithFriendName,
     updateById,
     removeById
 }
