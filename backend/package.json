@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start:dev": "env NODE_ENV=development nodemon ./src/index.js",
     "start:prod": "env NODE_ENV=production node ./src/index.js"
